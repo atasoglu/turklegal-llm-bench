@@ -45,7 +45,7 @@ echo ""
 
 uv run lm-eval \
   --model openai-chat-completions \
-  --model_args "model=$MODEL,base_url=https://openrouter.ai/api/v1,api_key=$OPENROUTER_API_KEY" \
+  --model_args "model=$MODEL,base_url=https://openrouter.ai/api/v1/chat/completions,api_key=$OPENROUTER_API_KEY" \
   --tasks turklegal_bench \
   --include_path "$ROOT/tasks" \
   --apply_chat_template \

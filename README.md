@@ -65,6 +65,34 @@ data/
 results/                    # evaluation outputs (git-ignored)
 ```
 
+## Results
+
+Evaluated on the **test split (117 questions)** in zero-shot mode via OpenRouter (May 2026).
+
+### Overall accuracy
+
+| Model | Correct | Total | Accuracy |
+|---|---:|---:|---:|
+| Claude Sonnet 4.6 | 115 | 117 | **98.3%** |
+| GPT-5.5 | 114 | 117 | 97.4% |
+| Gemini 3.5 Flash | 113 | 117 | 96.6% |
+
+### Per-domain accuracy (domains with at least one miss)
+
+| Domain | Claude Sonnet 4.6 | GPT-5.5 | Gemini 3.5 Flash |
+|---|---:|---:|---:|
+| borclar_hukuku | 92.3% | 100% | 92.3% |
+| ceza_muhakemesi_hukuku | 85.7% | 85.7% | 85.7% |
+| esya_hukuku | 100% | 75.0% | 75.0% |
+| idare_hukuku | 100% | 100% | 80.0% |
+| idari_yargilama_hukuku | 100% | 75.0% | 100% |
+
+All other domains (24 out of 29) were answered with 100% accuracy by every model.
+
+### Assessment
+
+All three frontier models perform exceptionally well on TurkLegalBench, achieving above 96% accuracy across 29 Turkish legal domains in a zero-shot setting. **Ceza Muhakemesi Hukuku** (Criminal Procedure) was the only domain where every model made at least one error, suggesting it presents the highest challenge. **Esya Hukuku** (Property Law) and **Idari Yargilama Hukuku** (Administrative Procedure) also caused occasional misses. The overall scores are high enough that further differentiation between models on this benchmark will require a larger test set or more difficult question formats (e.g., open-ended or multi-hop reasoning).
+
 ## Source & License
 
 Original research: [TurkHukuk — HukukBERT](https://www.turkhukuk.ai/blog/hukuk-yapay-zeka-modeli)  
